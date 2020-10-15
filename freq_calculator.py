@@ -14,7 +14,6 @@ class freqCalculator:
         # bol_frequencies.append(freqs[stats.mode(max_index_col)[0][0]])
         spectrum = np.transpose(spectrum)
         avg_index_col = []
-        print(freqs[1] - freqs[0])
         for j in range(len(spectrum) - 1):
             weights = np.array([k for k in range(len(spectrum[j]))])
             avg_index_col.append(np.average(weights, weights=spectrum[j]))
