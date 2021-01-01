@@ -7,3 +7,5 @@ simpleaudio
 scikit-learn
 scipy
 librosa
+xlsxwriter
+seaborn
