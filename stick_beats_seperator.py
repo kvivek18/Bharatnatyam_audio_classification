@@ -3,9 +3,9 @@ import os
 import xlsxwriter
 import matplotlib.pyplot as plt
 import wave
-from experience.bols_beats_seperator_failed import *
 from freq_calculator import freqCalculator
 import wave, struct, math, random
+import numpy as np
 
 
 def get_excel_file_name(words):
