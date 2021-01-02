@@ -55,7 +55,7 @@ for subdir, dirs, files in os.walk(curr_loc):
                 sum = sum + i
             curr_mean = sum / len(x)
             x = np.array([i - curr_mean for i in x])
-            mfccs = list(np.mean(librosa.feature.mfcc(y=x, sr=sr, n_mfcc=13).T, axis=0))
+            mfccs = list(np.mean(librosa.feature.mfcc(y=x, sr=sr, n_mfcc=40).T, axis=0))
             mfccs_delta = list(librosa.feature.delta(mfccs))
             mfccs_delta2 = list(librosa.feature.delta(mfccs, order=2))
             features = mfccs + mfccs_delta + mfccs_delta2
@@ -82,10 +82,11 @@ for subdir, dirs, files in os.walk(curr_loc):
             curr_mean = sum / len(x)
             x = np.array([i - curr_mean for i in x])
             mfccs = list(
-                np.mean(librosa.feature.mfcc(y=x, sr=sr, n_mfcc=13).T, axis=0))  # n_mfcc can be a hyper-parameter
+                np.mean(librosa.feature.mfcc(y=x, sr=sr, n_mfcc=40).T, axis=0))  # n_mfcc can be a hyper-parameter
             mfccs_delta = list(librosa.feature.delta(mfccs))
             mfccs_delta2 = list(librosa.feature.delta(mfccs, order=2))
-            features = mfccs + mfccs_delta + mfccs_delta2  # feature has a dimension of 40x3 containg all important features
+            features = mfccs + mfccs_delta + mfccs_delta2
+            # feature has a dimension of 120x1 containg all important features
             test_data.append([features, LABELS[str(subdir.split('\\')[-1])]])
 
 

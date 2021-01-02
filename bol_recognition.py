@@ -1,7 +1,7 @@
 import pandas as pd
 
-train_data_df = pd.read_csv('C:/Users/hp/BTP_data_features/Training_Data_NN.csv')
-test_data_df = pd.read_csv('C:/Users/hp/BTP_data_features/Testing_Data_NN.csv')
+train_data_df = pd.read_csv('C:\\Users\\hp\\Desktop\\BTP_stuff\\BTP_data_features\\Training_Data.csv')
+test_data_df = pd.read_csv('C:\\Users\\hp\\Desktop\\BTP_stuff\\BTP_data_features\\Testing_Data.csv')
 total_data = pd.concat([train_data_df, test_data_df])
 total_data = total_data.drop(columns=[total_data.columns[0]])
 total_data = total_data.reset_index(drop=True)
